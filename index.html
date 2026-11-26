@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="VEX File Hosting - temporary file sharing">
+  <title>VEX File Hosting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div class="brand-mark">V</div>
+      <div><h1>VEX File Hosting</h1><p>Upload · Share · Auto-delete</p></div>
+      <span class="status">FREE</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">TEMPORARY FILE SHARING</p>
+      <h2>Upload a file.<br><span>Get a shareable link.</span></h2>
+      <p class="intro">Choose a file and upload it. Your link will be ready to copy when the upload finishes.</p>
+    </section>
+
+    <section class="panel">
+      <label class="dropzone" id="dropzone" for="fileInput">
+        <span class="upload-icon">↑</span>
+        <strong>Choose a file to upload</strong>
+        <span>Tap to browse your phone or drop a file here</span>
+        <small>Maximum 100 MB per file · Automatically deleted after 48 hours</small>
+      </label>
+      <input id="fileInput" type="file" hidden>
+      <div class="selected" id="selected" hidden></div>
+      <button id="uploadBtn" class="primary" disabled>Upload file</button>
+      <div class="progress-wrap" id="progressWrap" hidden>
+        <div class="progress-label"><span id="progressText">Uploading…</span><span id="progressPercent">0%</span></div>
+        <div class="track"><div id="progressBar"></div></div>
+      </div>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+      <div id="result" class="result" hidden>
+        <div class="success">Upload complete</div>
+        <p id="resultName"></p>
+        <div class="link-row"><input id="shareLink" readonly aria-label="Share link"><button id="copyBtn" class="copy">Copy</button></div>
+        <a id="openLink" class="open-link" target="_blank" rel="noopener">Open download page ↗</a>
+        <small>Anyone with this link can access the file until it expires.</small>
+      </div>
+    </section>
+
+    <section class="notice">
+      <strong>Important</strong>
+      <p>This first version uses TempFile.org's free API. It supports files up to 100 MB and 48-hour expiry. It is a third-party temporary storage service, not permanent hosting.</p>
+      <p><strong>Upload access is currently public:</strong> anyone who can open this website can use the upload form. Do not share the website address publicly until private admin-only upload is added.</p>
+    </section>
+    <footer>© <span id="year"></span> VEX File Hosting</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
